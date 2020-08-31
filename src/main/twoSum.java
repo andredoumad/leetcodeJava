@@ -5,6 +5,8 @@ package main;
 import java.util.Hashtable;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
+import java.util.HashMap;
 
 public class twoSum {
 
@@ -13,13 +15,20 @@ public class twoSum {
     }
 
     public int[] solve(int[] nums, int target){
-        Hashtable<int[],int[]> dictionary = new Hashtable<int[],int[]>();
+        int[] result = new int[2];
+        Map<Integer, Integer> map = new HashMap<Integer, Integer>();
         List<Integer> list = new ArrayList<Integer>();
 
-        int[] result = new int[10];
         for(int i = 0; i < nums.length; i++){
-            System.out.println("nums: " + nums[i]);
-            list.add(nums[i]);
+            int findThis = target - nums[i];
+            System.out.println("findThis: " + findThis);
+            System.out.println("dictionary: " + map);
+            if(map.containsKey(findThis)){
+                result[1] = i;
+                result[0] = map.get(findThis);
+                return result;
+            }
+            map.put(nums[i], i);
         }
         return result;
     }

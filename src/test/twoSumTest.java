@@ -45,8 +45,13 @@ public class twoSumTest {
     @Test
     public void test_a(){
         solution.doIt();
-        int[] nums = {2,7,11,15};
+        int[] nums = {3, 5, 8, 2, 7, 11, 15};
         int target = 9;
-        solution.solve(nums, target);
+        int[] result = solution.solve(nums, target);
+        for(int i=0; i < result.length; i++){
+            System.out.println(result[i]);
+        }
+
+
     }
 }
