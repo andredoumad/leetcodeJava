@@ -24,6 +24,7 @@ public class twoSum {
             System.out.println("findThis: " + findThis);
             System.out.println("dictionary: " + map);
             if(map.containsKey(findThis)){
+                System.out.println("found it: " + map.get(findThis));
                 result[1] = i;
                 result[0] = map.get(findThis);
                 return result;
